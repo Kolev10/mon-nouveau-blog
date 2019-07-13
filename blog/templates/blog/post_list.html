@@ -3,9 +3,19 @@
          <title>King Kolev</title>
          </head>
      <body>
-         <h1> Dieureudieuf Serigne Touba  </h1>
-         <h2> Diarama Cheikh Ibra</h2>
+          <div>
+              <h1> <a href="/"></a> mon premier blog</h1>
+          </div>
 
+
+
+        {% for post in posts %}
+        <div>
+             <p>published: {{ post.published_date }}</p>
+             <h2> <a href="/"> </a>{{post.title}} </h2>
+             <p> {{post.text}} </p>
+        </div>     
+        {% endfor %}  
 
 
 </body>
