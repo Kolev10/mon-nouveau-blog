@@ -1,22 +1,14 @@
-<html>
-         <head>
-         <title>King Kolev</title>
-         </head>
-     <body>
-          <div>
-              <h1> <a href="/"></a> mon premier blog</h1>
-          </div>
+ {% extends 'blog/base.html' %}
+      {% block content %}
+         {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+   
 
 
-
-        {% for post in posts %}
-        <div>
-             <p>published: {{ post.published_date }}</p>
-             <h2> <a href="/"> </a>{{post.title}} </h2>
-             <p> {{post.text}} </p>
-        </div>     
-        {% endfor %}  
-
-
-</body>
-</html>
+      {% endblock  %}%}
+      
